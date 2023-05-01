@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Forget page</title>
+		<style>
+			body{
+				background-image:url("http://2.bp.blogspot.com/-kdoO6T_gKtE/TmwWX-21u1I/AAAAAAAAEe4/pO-Var4DryQ/s1600/Animated+Backgrounds++3.gif")
+			}
+			.box{
+			
+				height:350px;
+				width:500px;
+				margin-left:600px;
+				margin-top:300px;
+				background-image:url("http://3.bp.blogspot.com/-X_IqkWFCY9U/TlI8ttK0GvI/AAAAAAAA2zg/s8UYlTVAr7I/s1600/Free-Animated-Powerpoint-Desktop-Wallpaper.jpg");
+				border-radius:5px;
+				box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+				padding-top:40px;
+					
+			}
+			input{
+				 padding:5px;
+				 width:400px;
+				 display: flex;
+				 flex-direction: column;
+			         margin: auto;
+				 font-size: 30px;
+			         border-radius: 10px;
+			         
+			}
+			.password{
+				margin-top:30px;
+				border-radius: 10px;
+				padding:5px;
+			}
+			
+			.create{
+				padding:20px 80px;
+				background-color:aqua;
+				border:none;
+				margin-left:120px;
+				margin-top:40px;
+				font-size:20px;
+				border-radius:5px;
+			}	
+			.confirm{
+				margin-top:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		 <input type="text" placeholder="Enter your name" class=" name">
+			    <input type="password" placeholder="Enter New Password" class="password">
+			    <input type="password" placeholder="Enter confirm Password" class="confirm">
+			    <button class="create">CREATE</button>
+			
+	</body>
+	<script>
+            var Name=document.querySelector(".name");
+            var password=document.querySelector(".password");
+            var confirm=document.querySelector(".confirm");
+            var button=document.querySelector(".create");
+            button.onclick=function(){
+            console.log(location.href="Dashboard.html");
+               var Name=document.querySelector(".name").value;
+               var password=document.querySelector(".password").value;
+               var confirm=document.querySelector(".confirm").value;
+               console.log(Name,password,confirm)
+               var result=JSON.parse(localStorage.getItem("data")) || []
+	       localStorage.setItem("data",JSON.stringify([...result,{Name,password,confirm}]));
+	       console.log(localstorage.getItem("data"));
+			
+        }
+    </script>
+

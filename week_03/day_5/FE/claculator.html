@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<style>
+	body{
+	        background-color:green;
+	
+	}
+	.blue{
+		background-color:skyblue;
+		padding:40px 40px 40px 30px ;
+		width:400px;
+		margin:auto;
+		margin-top:150px;
+		border-radius:2px;
+		
+		
+	}
+	.display{
+		padding:80px 10px 0px 50px ;
+		background-color:white;
+		margin:0px 10px 0px 13px;
+	}
+	.numbers{
+		
+		display:flex;
+		margin-top:15px;
+		
+	}
+	.number{
+		padding:40px ;
+		background-color:white;
+		margin-left:10px;
+	}
+	.Yellow{
+		background-color:yellow;
+	}
+
+	.Red{
+		background-color:red;
+	}
+	.space{
+		padding:42px;
+	}
+	</style>
+	</head>
+	<body>
+	<div class="container blue">
+		<div class="display"></div>
+		    <div class="numbers">
+				<div class="number">1</div>
+				<div class="number">2</div>
+				<div class="number">3</div>
+				<div class="number Yellow">+</div>
+		    </div>
+		    <div class="numbers">
+				<div class="number">4</div>
+				<div class="number">5</div>
+				<div class="number">6</div>
+				<div class="number Yellow space">-</div>
+		   </div>
+		   <div class="numbers">
+				<div class="number">7</div>
+				<div class="number">8</div>
+				<div class="number">9</div>
+				<div class="number Yellow">*</div>
+		  </div>
+		  <div class="numbers">
+				<div class="number Red">C</div>
+				<div class="number">0</div>
+				<div class="number">=</div>
+				<div class="number Yellow space">/</div>
+	       </div>
+		
+	</div>
+	</body>
+	<script>
+		let keys = document.querySelectorAll(".numbers");
+	    	let bag = "";
+	    	for(let i =0;i<keys.length;i++){
+		keys.onclick()
+	    	}
+	   	
+	
+	</script>
+</html>
+

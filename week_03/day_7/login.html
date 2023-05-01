@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Dashboard Page</title>
+		<style>
+			body{
+				background-image:url("flow.jpeg");
+			}
+			.box{
+				height:400px;
+				width:500px;
+				margin-left:600px;
+				margin-top:300px;
+				background-image:url("https://images.pexels.com/photos/1191710/pexels-photo-1191710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+				border-radius:5px;
+				box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+				padding-top:40px;
+					
+			}
+			 input{
+				 padding:5px;
+				 width:400px;
+				 display: flex;
+				 flex-direction: column;
+			         margin: auto;
+				 font-size: 40px;
+			         border-radius: 10px;
+			         
+			}
+			.password{
+				margin-top:30px;
+				border-radius: 10px;
+				padding:5px;
+			}
+			.submit{
+			        margin-top:30px;
+			        border-radius: 10px;
+			        color: white;
+			        padding: 5px;
+			        background-color: cyan;
+				cursor: pointer;
+			}
+			a{
+				text-decoration:none;
+			}
+			h1{
+				margin-left:60px;
+				color:white;
+			}
+			.p{
+				color:black;
+				margin-left:40px;
+			}
+							
+							
+			
+		</style>
+	</head>
+	<body>
+	
+			<div class="box">
+			    <input type="text" placeholder="name" class="name">
+			    <input type="password" placeholder="password" class="password">
+			    <input type="button" value="submit" class="submit">
+			    <h1>create account<a href="SIGNUP.html">Sign Up</a></h1>
+			    <h1><a class="p" href="forgetpage.html">Forgot password?</a></h1>
+					
+		</div>
+	</body>
+	<script>
+           var Name=document.querySelector(".name");
+            var password=document.querySelector(".password");
+            var button=document.querySelector(".submit");
+            button.onclick=function(){
+            console.log(location.href="web.html");
+	    let result = JSON.parse(localStorage.getItem("Details"));
+	    let flag = false;
+	    for(let i = 0; i < result.length; i++){
+	    if(result[i].username === Name && result[i].password === password) {
+	    flag = true;
+	}
+}
+	    if(flag) {
+	    alert("login Successfull");
+	    window.location.href="web.html";
+	    }else {
+	    alert("login failed");
+	}
+
+				
+				
+		}
+		
+		
+    </script>
+</html>

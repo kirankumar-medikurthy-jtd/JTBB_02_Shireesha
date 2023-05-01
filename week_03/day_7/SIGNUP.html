@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			.form{
+				background-color:#4682B4;
+				height:600px;
+				width:600px;
+				margin:300px 600px;
+				display:flex;
+				flex-direction:column;
+				border-radius:15px;
+			}
+			#box{
+				display:flex;
+				flex-direction:column;
+			}
+			h1{
+				font-size:50px;
+				text-align:center;
+			}
+			#box input{
+				width:300px;
+				height:40px;
+				font-size:20px;
+				margin-top:20px;
+				margin-left:160px;
+				border-radius:5px;
+				
+				
+			}
+			body{
+				background-image:url("http://wallpapercave.com/wp/dFABfAi.jpg");
+			}
+			a{
+				text-decoration:none;
+				
+			}
+			h2{
+				margin-left:160px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form">
+			<h1>SignUp Page</h1>
+			<div id="box">
+				<input class="first" type="text" placeholder="Enter first name"/>
+				<input class="last" type="text" placeholder="Enter last name"/>
+				<input class="number" type="number" placeholder="Enter phone number"/>
+				<input class="email" type="text" placeholder="Enter Email"/>
+				<input class="password" type="password" placeholder="Enter password"/>
+				<input type="button"value="submit" class="button"/>
+				<h2>Already a member<a href="Dashboard.html">Login</a></h2>
+	</body>
+	<script>
+			var button=document.querySelector(".button")
+			button.onclick=function (){
+			console.log(location.href="login.html");
+			var first=document.querySelector(".first").value;
+			var last=document.querySelector(".last").value;
+			var number=document.querySelector(".number").value;
+			var email=document.querySelector(".email").value;
+			var password=document.querySelector(".password").value;
+			console.log(first,last,number,email,password);
+			alert("success");
+			var result=JSON.parse(localStorage.getItem("data")) || []
+			localStorage.getItem("data",JSON.stringify([...result,{first,last,number,email,password}]));
+			console.log(localstorage.getItem("data"));	
+			}	
+
+	</script>
+			

@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>switch on the bulb</title>
+	</head>
+	<style>
+		
+		#box{
+			background-color: aqua;
+			height:200px;
+			width:200px;
+			border:2px solid black;
+			border-radius:50%;
+			
+			
+		}
+		
+	</style>
+	<body>
+		<div class="main">
+			<div id="box"></div>
+		</div>
+	</body>
+	<script>
+	 let divTag = document.getElementsById("box")
+	 divTag.onclick = function(){
+		divTag.style.backgroundColor="red";
+		console.log(divtag);
+		
+	 }
+	 let catMove = "mousemove"
+    	 divTag.addEventListener(catMove,function(){
+         	divTag.style.backgroundColor = "blue";
+        
+     })
+	
+</script>	
+</html>
