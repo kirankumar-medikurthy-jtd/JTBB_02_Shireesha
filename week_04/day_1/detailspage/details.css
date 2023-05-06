@@ -1,0 +1,23 @@
+.bookdisplay{
+    height:600px;
+    width:500px;
+    background-color: white;
+    border:20px solid rgb(228, 10, 46);
+    margin:auto;
+    margin-top: 150px;
+    padding-left: 80px;
+    border-radius: 5px;
+
+}
+
+.button{
+         padding:10px 80px;
+        background-color:aqua;
+        border: 5px solid rgb(244, 10, 49);
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 30px;
+        margin-top: 1000px;
+        color:white; 
+        margin-left: 1400px;
+}

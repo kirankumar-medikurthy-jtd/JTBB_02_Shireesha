@@ -33,7 +33,7 @@
 				padding:5px;
 			}
 			
-			.create{
+			.button{
 				padding:20px 80px;
 				background-color:aqua;
 				border:none;
@@ -52,24 +52,45 @@
 		 <input type="text" placeholder="Enter your name" class=" name">
 			    <input type="password" placeholder="Enter New Password" class="password">
 			    <input type="password" placeholder="Enter confirm Password" class="confirm">
-			    <button class="create">CREATE</button>
+			    <button class="button">CREATE</button>
 			
 	</body>
 	<script>
-            var Name=document.querySelector(".name");
-            var password=document.querySelector(".password");
-            var confirm=document.querySelector(".confirm");
-            var button=document.querySelector(".create");
-            button.onclick=function(){
-            console.log(location.href="Dashboard.html");
-               var Name=document.querySelector(".name").value;
-               var password=document.querySelector(".password").value;
-               var confirm=document.querySelector(".confirm").value;
-               console.log(Name,password,confirm)
-               var result=JSON.parse(localStorage.getItem("data")) || []
-	       localStorage.setItem("data",JSON.stringify([...result,{Name,password,confirm}]));
-	       console.log(localstorage.getItem("data"));
-			
-        }
+		 let button=document.querySelector(".button");
+        button.onclick=function(){
+            let UserName=document.querySelector(".name").value;
+            let password=document.querySelector(".password").value;
+            let newPassword=document.querySelector(".confirm").value;
+            let result=JSON.parse(localStorage.getItem("data")) || [];
+            if(password===newPassword){
+            let temp=[];
+		    for(let i=0;i<result.length;i++){
+		         
+		    	if(UserName == result[i].UserName){
+		    		if(password !== result[i].password){
+		    			let  bag={
+		    			   ...result,
+		    			   password:newPassword
+		    			}
+		    		
+		    		temp.push(bag);
+		    	}
+		    	}
+		    	 else{
+		    	 	temp.push(result[i]);
+                        }	
+		    
+            }
+            
+		    localStorage.setItem("data" , JSON.stringify(temp));
+		    alert("password is changed");
+		    window.location.href="login.html"
+            }
+            else{
+		   console.log(password,newPassword);
+		   alert("failed");
+            }
+            }
+        
     </script>
 

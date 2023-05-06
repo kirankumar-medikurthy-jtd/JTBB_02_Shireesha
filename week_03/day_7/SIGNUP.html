@@ -47,6 +47,7 @@
 			<div id="box">
 				<input class="first" type="text" placeholder="Enter first name"/>
 				<input class="last" type="text" placeholder="Enter last name"/>
+				<input class="user" type="text" placeholder="Enter user name"/>
 				<input class="number" type="number" placeholder="Enter phone number"/>
 				<input class="email" type="text" placeholder="Enter Email"/>
 				<input class="password" type="password" placeholder="Enter password"/>
@@ -54,19 +55,21 @@
 				<h2>Already a member<a href="Dashboard.html">Login</a></h2>
 	</body>
 	<script>
+		var result=JSON.parse(localStorage.getItem("data")) || []
 			var button=document.querySelector(".button")
 			button.onclick=function (){
-			console.log(location.href="login.html");
+			
 			var first=document.querySelector(".first").value;
 			var last=document.querySelector(".last").value;
+			var Username=document.querySelector(".user").value;
 			var number=document.querySelector(".number").value;
 			var email=document.querySelector(".email").value;
 			var password=document.querySelector(".password").value;
-			console.log(first,last,number,email,password);
-			alert("success");
-			var result=JSON.parse(localStorage.getItem("data")) || []
-			localStorage.getItem("data",JSON.stringify([...result,{first,last,number,email,password}]));
-			console.log(localstorage.getItem("data"));	
+			 console.log(first,last,number,email,password,Username);
+			
+			localStorage.setItem("data",JSON.stringify([...result,{first,last,number,email,password,Username}]));
+			console.log(localStorage.getItem("data"));	
+			window.location.href="login.html";
 			}	
 
 	</script>

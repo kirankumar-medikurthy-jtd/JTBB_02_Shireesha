@@ -1,0 +1,41 @@
+.navbar{
+    padding:30px 10px 30px 10px;
+    background-color: black;
+    
+}
+
+.text{
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    margin-left: 80px;
+    
+}
+.text1{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 900px;
+}
+.text2{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 70px;
+}
+.text3{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 70px;
+}
+.text4{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-left: 70px;
+}
+img{
+    width:1815px;
+    height:900px;
+}
