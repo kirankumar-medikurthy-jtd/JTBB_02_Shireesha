@@ -15,8 +15,10 @@ body{
         height:700px;
         width:600px;
         /* border:1px solid red;  */
-        background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/17/black-background-design.jpg");
+        /* background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/17/black-background-design.jpg"); */
         border-radius: 10px;
+        background-image: url("https://tse4.mm.bing.net/th?id=OIP.SsuUMXif-iuwJys0WU1c_wHaEK&pid=Api&P=0");
+        background-size:cover; 
 }
 .right{
     height:680px;
@@ -25,7 +27,8 @@ body{
     margin-left: 1px;
     border-radius: 5px; 
     padding-top: 20px;
-    background-image: url("https://tse2.mm.bing.net/th?id=OIP.qZFd0GEDpBcb1g2UEzvFugHaEK&pid=Api&P=0");
+    /* background-image: url("https://tse4.mm.bing.net/th?id=OIP.SsuUMXif-iuwJys0WU1c_wHaEK&pid=Api&P=0"); */
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/17/black-background-design.jpg");
     
 }
 h2{
@@ -71,6 +74,7 @@ font-size: 20px;
 margin-left: 80px;
 margin-top: 10px;
 font-family:Arial, Helvetica, sans-serif;
+color:whitesmoke;
 }
 .btn{
     

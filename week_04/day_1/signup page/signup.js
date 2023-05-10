@@ -1,3 +1,12 @@
+// var signupdata=JSON.parse(localStorage.getItem("loginUser"));
+// if(signupdata){
+// location.href="../library/library.html"
+// }
+// else{
+
+
+
+
 var btn=document.querySelector(".btn");
 var result=JSON.parse(localStorage.getItem("signupdata")) || [];
 var adminCode=JSON.parse(localStorage.getItem("AdminCode")) || " ";
@@ -34,3 +43,4 @@ alert("Wrong Admin Code");
 alert("Please enter all data")
 }
 }
+// }

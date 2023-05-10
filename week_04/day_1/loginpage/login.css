@@ -6,7 +6,7 @@ body{
     height:700px;
     width:60%;
     margin-left: 350px;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     display: flex;
     margin-top: 100px;
     
@@ -15,8 +15,9 @@ body{
         height:700px;
         width:600px;
         /* border:1px solid red;  */
-        background-image: url("https://thumbs.dreamstime.com/b/abstract-color-splash-black-background-isolated-144858934.jpg");
+        background-image: url("https://tse1.mm.bing.net/th?id=OIP.qyqxFmEvAVJI4eFIlyAahAHaFj&pid=Api&P=0");
         border-radius: 10px;
+        background-size: cover;
 }
 .right{
     height:680px;
@@ -25,7 +26,9 @@ body{
     margin-left: 1px;
     border-radius: 5px; 
     padding-top: 20px;
-    background-image: url("https://tse2.mm.bing.net/th?id=OIP.qZFd0GEDpBcb1g2UEzvFugHaEK&pid=Api&P=0");
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+    /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.n8Dc9ZKr_0up2cum4qF7EwHaEo&pid=Api&P=0"); */
     
 }
 h2{
@@ -76,7 +79,7 @@ font-family:Arial, Helvetica, sans-serif;
     
     margin-left: 200px; 
     font-size: 20px;
-    background-color: aqua;
+    background-color:#00BFFF;
     border-radius: 5px;
     margin-top: 70px;
     margin-left: 50px;
@@ -84,7 +87,8 @@ font-family:Arial, Helvetica, sans-serif;
 }
 .a{
     text-decoration: none;
-    color:black;
+    /* color:black; */
+    color: whitesmoke;
 }
 .p{
     text-decoration: none;
@@ -93,8 +97,9 @@ font-family:Arial, Helvetica, sans-serif;
 }
 .login{
     margin-left: 170px;
-    color:whitesmoke;
+    color:black; 
     font-size: 40px;
+    /* color: whitesmoke; */
 }
     
 

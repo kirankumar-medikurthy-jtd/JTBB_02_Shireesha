@@ -1,3 +1,14 @@
+// var signupdata=JSON.parse(localStorage.getItem("loginUser"));
+// if(signupdata){
+// location.href="../loginpage/login.html"
+// }
+// else{
+
+
+
+
+
+
 var result=JSON.parse(localStorage.getItem("signupdata")) || [];
 var adminCode=JSON.parse(localStorage.getItem("AdminCode"))||[];
 
@@ -31,4 +42,4 @@ if(result.name&&result.password==" "){
 }
 if(!temp) alert("wrong username and password");
 }
-
+// }

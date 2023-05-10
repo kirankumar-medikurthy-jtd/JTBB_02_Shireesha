@@ -9,8 +9,9 @@ button.onclick=function(){
     let ratings=document.querySelector(".ratings").value;
     console.log(name,author,year,publish,book,prize,ratings);
 
-    var result=JSON.parse(localStorage.getItem("data"))||[];
-    localStorage.setItem("data",JSON.stringify([...result,{name,author,year,publish,book,prize,ratings}]));
-    console.log(localStorage.getItem("data"));
+    var result=JSON.parse(localStorage.getItem("bookDetails"))||[];
+    localStorage.setItem("bookDetails",JSON.stringify([...result,{name,author,year,publish,book,prize,ratings}]));
+    console.log(localStorage.getItem("bookDetails"));
+    
 
 }

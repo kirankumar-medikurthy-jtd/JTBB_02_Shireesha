@@ -1,6 +1,7 @@
 .navbar{
     padding:30px 10px 30px 10px;
     background-color: black;
+    /* display: flex; */
     
 }
 
@@ -8,14 +9,14 @@
     font-size: 40px;
     color: white;
     text-decoration: none;
-    margin-left: 80px;
+    margin-left: 40px;
     
 }
 .text1{
     font-size: 20px;
     color: white;
     text-decoration: none;
-    margin-left: 900px;
+    margin-left: 800px;
 }
 .text2{
     font-size: 20px;
@@ -38,4 +39,15 @@
 img{
     width:1815px;
     height:900px;
+}
+.text5{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    /* margin-left: 1400px; */
+    /* margin-top: -100px; */
+    margin-left: 70px;
+
+   
+    
 }
