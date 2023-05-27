@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>users</title>
+<style>
+.navbar{
+display: flex;
+background-image: linear-gradient(to right, #c511cb 30%, #25fcfc 70%);
+color:black;
+padding:1px 0px;
+}
+.image{
+height: 40px;
+width: 40px;
+border-radius: 50%;
+margin-left: 40px;
+}
+.user{
+margin-left: 1200px;
+}
+.repo{
+margin-left: 100px;
+}
+.topic{
+margin-left: 100px;
+}
+.sign{
+margin-left: 100px;
+}
+a{
+color:black;
+text-decoration: none;
+}
+a:hover{
+text-decoration: underline;
+}
+.search{
+margin-top: 50px;
+height: 40px;
+width: 400px;
+border:3px solid rgb(48, 5, 174);
+font-size:25px;
+}
+.icon{
+height: 42px;
+width: 50px;
+margin-top: 50px;
+border:3px solid rgb(48, 5, 174);
+margin-left: 2px;
+}
+.display{
+display: flex;
+margin-left: 500px;
+}
+.card{
+border: 2px solid brown;
+background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 90%);
+color:white;
+margin: 10px;
+padding: 40px 40px 40px 40px;
+cursor: pointer;
+width: 250px;
+text-align: center;
+border-radius:20px;
+/* height:300px; */
+}
+.data{
+display: flex;
+flex-wrap:wrap;
+
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<h1><a href="../homepage/home.html"><img class="image" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt=""></a></h1>
+<a href="../userspage/user.html"><h1 class="user">Users</h1></a>
+<a href="../repositoriespage/repo.html"><h1 class="repo">Repositories</h1></a>
+<a href="../topicspage/topic.html"><h1 class="topic">Topics</h1></a>
+</nav>
+<div class="display">
+<input type="text" class="search" id="search" placeholder="Enter Username"/>
+<div onclick="searchData()"><img class="icon" src="https://cdn.icon-icons.com/icons2/3392/PNG/512/small_search_icon_213735.png" alt=""></div>
+</div>
+<div class="data"></div>
+<script>
+async function fetchData(url){
+const response = await fetch(url);
+const jsonData = await response.json()
+return jsonData
+}
+async function searchData (){
+let search = document.querySelector(".search").value;
+let response = await fetchData(`https://api.github.com/search/topics?q=${search}`);
+console.log(response);
+
+let data = document.querySelector(".data");
+let usersdata = response["items"]
+if(usersdata.length !== 0){
+for(let i=0; i<usersdata.length; i++){
+let div=document.createElement("div");
+div.setAttribute("class", "card")
+
+let name = document.createElement("div");
+name.setAttribute("src", usersdata[i].name);
+name.style.width = "100px";
+name.style.height = "100px";
+
+let display_name = document.createElement("div");
+display_name.innerText = usersdata[i].display_name;
+
+let created_by = document.createElement("div");
+created_by.innerText = usersdata[i].created_by;
+
+let updated_at = document.createElement("div");
+updated_at.innerText = `${usersdata[i].updated_at ? "" : "Not "}updated_at.`
+
+div.append(name,display_name,created_by,updated_at);
+data.append(div);
+
+}
+}
+else
+{
+let div=document.createElement("div");
+let avatar = document.createElement("img");
+avatar.setAttribute("src", "../NotFound.gif");
+avatar.style.width = "500px";
+avatar.style.height = "500px";
+div.append(avatar);
+data.append(div);
+}
+}
+
+</script>
+</body>
+</html>

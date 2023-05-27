@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+            body{
+                /* background-image: url("https://media.istockphoto.com/id/1175306966/vector/black-cat-on-the-black-background-black-cat-with-eyes-of-different-colors.jpg?s=612x612&w=0&k=20&c=42avcFdQeKr7Zf3mMSCykLyssAGz0DDzmEnF_Qh8TY0="); */
+                background-size: cover;
+                background-image: url("https://tse3.mm.bing.net/th?id=OIP.iw1dzVSgtMZpF-CrC2fDcAHaEK&pid=Api&P=0&h=180");
+}
+            
+            .nav{
+                    display: flex;
+                    padding:3px 200px;
+                    background-color:rgba(230, 226, 226, 0.56);
+                    /* justify-content: space-between; */
+                    /* font-family:sans-serif; */
+                
+            }
+            .nav img{
+                    height:50px;
+                    width:50px;
+                    border-radius: 50px;
+                    margin-left: -150px;
+                    margin-top: 10px;
+                    
+            }
+            .user{
+                margin-left:950px ;
+                margin-top: 25px;
+            }
+            .repo{
+                margin-left: 100px;
+                margin-top: 25px;
+            }
+            .top{
+                margin-left: 100px;
+                margin-top: 25px;
+            }
+            a{
+                text-decoration: none;
+                color:black;
+            }
+            .input{
+                padding:10px 100px;
+                border-radius: 4px;
+                margin-top: 30px;
+                margin-left: 600px;
+            }
+            .btn{
+                padding:9px 25px;
+            }
+            .data{
+                background-color: black;
+                width:300px;
+                height:300px;
+                border-radius: 5px;
+                margin-left: 700px;
+                margin-top: 50px;
+            }
+          
+    </style>
+</head>
+<body>
+        <div class="nav">
+            <a href="../homepage/home.html"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"></a>
+                <h2 class="user"><a href="../userspage/user.html" >USERS</a></h2>
+                <h2 class="repo"><a href="../repositoriespage/repo.html">REPOSITORIES</a></h2>
+                <h2 class="top"><a href="../topicspage/topic.html">TOPICS</a></h2>
+        </div>
+        <div>
+            <input type="text" class="input">
+            <button class="btn" onclick="searchData()">Search</button>
+            <div class="data"></div>
+            
+        </div>
+</body>
+<script>
+    
+    
+    // function display(index){
+    // console.log(result[result]);
+
+    let data=document.querySelector(".data");
+    let result=JSON.parse(localStorage.getItem("topic"));
+    // let totalData=JSON.parse(localStorage.getItem("bookDetails"));
+
+
+   
+   
+    let div=document.createElement("div");
+    div.setAttribute("class","card");
+
+    
+    let avatar=document.createElement("img");
+    avatar.setAttribute("src", result.avatar_url);
+    avatar.style.width="100px"
+    avatar.style.height="100px"
+    avatar.style.marginLeft="100px";
+    avatar.style.marginTop="30px"
+
+    let login=document.createElement("div");
+    login.innerText=result.login;
+    login.style.color="white";
+    login.style.fontSize="30px";
+    login.style.marginLeft="90px"
+
+    let id=document.createElement("div");
+    id.innerText=result.id;
+    id.style.fontSize="30px";
+    id.style.color="white";
+    id.style.marginLeft="90px"
+
+    let site_admin=document.createElement("div");
+    site_admin.innerText=`${result.site_admin?"":"Not"}site_admin`;
+    site_admin.style.color="white";
+    site_admin.style.fontSize="30px";
+    site_admin.style.marginLeft="90px"
+
+    // div.setAttribute("onclick",`display(${result[result]})`);
+    // window.location.href="../nextpage/next.html"
+
+    div.append(avatar,login,id,site_admin);
+    
+    data.append(div);
+
+     
+
+
+
+
+        
+
+
+
+</script>
+</html>

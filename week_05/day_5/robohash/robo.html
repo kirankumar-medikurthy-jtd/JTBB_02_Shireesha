@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<title>Robohash</title>
+</head>
+<style>
+	.inputbar {
+		width: 500px;
+		height: 40px;
+		font-size: 25px;
+		margin-left: 400px;
+        border:0px solid rgb(0, 0, 0);
+        margin-top:20px;
+	}
+
+	.search {
+		 width: 80px;
+		height: 40px; 
+		margin-left: 10px;
+        border:0px solid black;
+        color:darkred;
+         margin-top:20px; 
+	}
+
+	 .heading {
+		text-align: center;
+		border: 0px solid darkmagenta;
+		color:darkblue;
+		background-color:hotpink;
+        width:100%;
+        height:50px;
+        margin:auto;
+        padding-top: 20px;
+        padding-left: 10px;
+	} 
+    .head2
+    {
+        margin-left: 460px;    
+    }
+    .imgtag
+    {
+        margin-left:420px;
+    }
+    .laugh
+   {
+        font-size:90px;
+   }
+   body
+   {
+     background-color: rgb(38, 151, 115);   
+   }
+   .flex
+   {
+        display:flex;
+   }
+</style>
+
+<body>
+	<h2 class="heading"> Robo Hash</h2>
+    <div class="flex">
+        <input class="inputbar" type="text" />
+        <button class="search" onclick="searchrobo()">Search</button>
+    </div>
+    <div class="display">
+        <h2 class ="head2">See Your Robo Images Here<span class ="laugh">&#128514; </span></h2>
+        <img class="imgtag" alt=""/>
+    </div>
+</body>
+<script>
+	//let search = document.querySelector(".search");
+	   async function searchrobo() {
+
+       
+        //let display = document.querySelector(".display")
+        let searchValue = document.querySelector(".inputbar").value;
+        let response = await fetch(`https://robohash.org/${searchValue}`);
+        let img = document.querySelector(".imgtag");
+        img.src= response?.url;
+        img.style.marginLeft="420px";
+        img.style.border="1px solid pink";
+        img.style.backgroundColor ="white";
+        //display.append(head,img);
+        console.log(response);
+
+       
+	}
+
+</script>
+
+</html>

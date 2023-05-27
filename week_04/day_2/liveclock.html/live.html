@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             height: 100vh; 
+            /* background-color: lightcoral; */
+            /* height: 300px;
+            width: 300px; */
+            background-size: cover;
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.gTLWbzrcX_XOjaHgpPKKZwHaFj&pid=Api&P=0");
+        }
+        #clock > div {
+            padding: 50px;
+            margin: 30px;
+            background-color: rgb(121, 59, 59);
+            font-size: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            color: white;
+        }
+        span{
+            font-size: 20px;
+            color: white;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="clock">
+        <div id="hrs">00</div>
+        <span>:</span>
+        <div id="mins">00</div>
+        <span>:</span>
+        <div id="secs">00</div>
+        <div id="ampm">AM</div>
+    </div>
+   
+</body>
+</html>
+<script>
+    let clock = function() {
+         let date = new Date();
+         let hours = date.getHours();
+         let minutes = date.getMinutes();
+         let seconds = date.getSeconds();
+        
+         if(hours >= 12){
+            half = "PM";
+         }else {
+            half = "AM";
+         }
+
+
+         document.querySelector("#hrs").innerText = hours;
+         document.querySelector("#mins").innerText = minutes;
+         document.querySelector("#secs").innerText = seconds;
+         document.querySelector("#ampm").innerText = half;
+         setInterval(clock,1000);
+     }
+     clock();
+</script>

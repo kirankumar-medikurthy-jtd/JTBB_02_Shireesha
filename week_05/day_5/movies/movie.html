@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>users</title>
+<style>
+.navbar{
+display: flex;
+background-image: linear-gradient(to right, #0c6e1b 30%, #2575fc 70%);
+color:white;
+padding:1px 0px;
+}
+.image{
+height: 60px;
+width: 60px;
+border-radius: 50%;
+margin-left: 40px;
+}
+.user{
+margin-left: 1200px;
+}
+.repo{
+margin-left: 100px;
+}
+.topic{
+margin-left: 100px;
+}
+.sign{
+margin-left: 100px;
+}
+a{
+color:white;
+text-decoration: none;
+}
+a:hover{
+text-decoration: underline;
+}
+.search{
+margin-top: 50px;
+height: 40px;
+width: 400px;
+border:3px solid rgb(48, 5, 174);
+font-size:25px;
+}
+.icon{
+height: 42px;
+width: 50px;
+margin-top: 50px;
+border:3px solid rgb(48, 5, 174);
+margin-left: 2px;
+}
+.display{
+display: flex;
+margin-left: 500px;
+}
+.card{
+border: 2px solid brown;
+background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 90%);
+color:white;
+margin: 10px;
+padding: 40px 40px 40px 40px;
+cursor: pointer;
+width: 250px;
+text-align: center;
+border-radius:20px;
+/* height:300px; */
+}
+.data{
+display: flex;
+flex-wrap:wrap;
+
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<h1><a href="../homepage/home.html"><img class="image" src="https://media.istockphoto.com/id/1313644269/vector/gold-and-silver-circle-star-logo-template.jpg?s=612x612&w=0&k=20&c=hDqCI9qTkNqNcKa6XS7aBim7xKz8cZbnm80Z_xiU2DI=" alt=""></a></h1>
+<a href="../userspage/user.html"><h1 class="user">Users</h1></a>
+<a href="../repositoriespage/repo.html"><h1 class="repo">Repositories</h1></a>
+<a href="../topicspage/topic.html"><h1 class="topic">Topics</h1></a>
+</nav>
+<div class="display">
+<input type="text" class="search" id="search" placeholder="Enter Username"/>
+<div onclick="searchData()"><img class="icon" src="https://cdn.icon-icons.com/icons2/3392/PNG/512/small_search_icon_213735.png" alt=""></div>
+</div>
+<div class="data"></div>
+<script>
+async function fetchData(url){
+const response = await fetch(url);
+const jsonData = await response.json()
+return jsonData
+}
+let result = [];
+let data = document.querySelector(".data");
+
+async function searchData (){
+let search = document.querySelector(".search").value;
+let response = await fetchData(`https://www.omdbapi.com/?i=tt3896198&apikey=b9190f5c`);
+console.log(response);
+
+// movies=response?.Search;
+
+// let movie = response?.Search;
+// movie.Map(({Poster:movie,Title:movietitle,Year},index)=>{
+//     let div=document.createElement("div");
+//     div.setAttribute("class","card")
+
+//     let Poster=document.createElement("img");
+//     poster.style.width="100px";
+//     poster.style.height="100px";
+
+//     let Title=document.createElement("div");
+//     Title.innerText=movietitle;
+//     Title.style.fontSize="22px";
+
+//     let Writer=document.createElement("div");
+//     Writer.innerText=Year;
+//     Writer.style.fontSize="20px";
+
+    
+// })
+
+
+// div.setAttribute("onclick", `display(${index})`);
+
+// div.append(Poster,Title,Writer);
+// data.append(div);
+
+// }
+
+// function display(index){
+//     console.log(result[index]);
+   
+//     let div=document.createElement("div");
+//     div.setAttribute("class","Onemovie");
+    
+//     let Poster=document.createElement("img");
+//     Poster.setAttribute("src", result[index].Poster);
+//     Poster.style.width="100px"
+//     Poster.style.height="100px"
+
+//     let Title=document.createElement("div");
+//     Title.innerText=result[index].Title;
+
+//     let Writer=document.createElement("div");
+//     Writer.innerText=result[index].Writer;
+//     Writer.style.fontSize="20px";
+
+//     // let site_admin=document.createElement("div");
+//     // site_admin.innerText=`${result[index].site_admin?"":"Not"}site_admin`;
+
+//     div.setAttribute("onclick",`display(${result[index]})`);
+
+//     div.append(Poster,Title,Writer);
+//     data.innerText=div;
+//     document.body.append(div);
+
+
+
+ }
+
+
+ </script>
+ </body>
+ </html>
