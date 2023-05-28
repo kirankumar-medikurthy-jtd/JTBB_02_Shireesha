@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <title>UserDetails</title>
+    <style>
+body{
+    background-color:  white;
+    background-color: aquamarine;
+    background-size: cover;
+}
+#box{
+    height:700px;
+    width:60%;
+    margin-left: 350px;
+    
+    display: flex;
+    margin-top: 100px;
+    
+}
+ 
+.center{
+    height:680px;
+    width:600px;
+    margin-left: 300px;
+    border-radius: 5px; 
+    padding-top: 20px;   
+} 
+h2{
+    
+    font-size: 27px;
+    height:25px;
+    width:130px;
+    margin-left: 30px;
+    margin-top: 10px;
+    text-align: left; 
+   
+}
+h1{
+    margin-top: 10px;
+    margin-left: 30px;
+    width:130px;
+    text-align: left;
+
+    
+}
+.page{
+    margin-left: 30px;
+    height: 50px;
+}
+.page1{
+    margin-left: 120px;
+    height: 50px;
+    border-radius: 5px;
+}
+ .center input{
+    height:50px;
+    width:350px;
+    border-radius: 7px;
+    font-size: 20px;
+    
+    
+    
+} 
+p{
+font-size: 20px;
+margin-left: 80px;
+margin-top: 30px;
+font-family:Arial, Helvetica, sans-serif;
+}
+.btn{
+    
+    margin-left: 200px; 
+    font-size: 20px;
+    background-color:#00BFFF;
+    border-radius: 5px;
+    margin-top: 70px;
+    margin-left: 50px;
+    padding:2px 40px;
+}
+.a{
+    text-decoration: none;
+   
+    color: whitesmoke;
+}
+.p{
+    text-decoration: none;
+    margin-left:160px;
+    font-size: 25px;
+}
+.login{
+    margin-left: 170px;
+    color:black; 
+    font-size: 40px;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="form">
+        
+        <div id="box">
+            
+            <div class="center"> 
+            
+            <h1 class="login">UserDetails</h1>
+                <p>Name:<br><input type="text" placeholder="" class="name"></p> 
+                <p>UserName:<br><input type="text" placeholder="" vlaue="Name" class="user" ></h3>
+                <p>Email:<br><input type="text" placeholder="" vlaue="Name" class="password"></h3> 
+                <p>Phone number:<br><input type="text" placeholder="" vlaue="Name" class="phone"></h3>  
+                <button class="btn"><h2><a class="a" href="">submit</a></h2></button>
+
+                <div class="display"></div>
+               
+        </div>
+    </div>
+</body>
+<script>
+    let btn=document.querySelector(".btn");
+    btn.onclick=function(){
+    let name=document.querySelector(".name").value;
+    let user=document.querySelector(".user").value;
+    let password=document.querySelector(".password").value;
+    let phone=document.querySelector(".phone").value;
+    
+    console.log(name,user,password,phone);
+
+    var result=JSON.parse(localStorage.getItem("loginUser"))||[];
+    localStorage.setItem("loginUser",JSON.stringify([...result,{name,user,password,phone}]));
+    console.log(localStorage.getItem("loginUser"));
+    
+
+}
+let display=document.getElementsByClassName("display");
+
+let div=document.createElement("div");
+div.setAttribute("class","card");
+
+
+</script>
+</html>
